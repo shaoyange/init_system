@@ -66,11 +66,11 @@ function ins_iptables()
 }
 
 function init_ssh() {
-    sed -i 's/^#Port 22/Port 12080/g' /etc/ssh/sshd_config
+    #sed -i 's/^#Port 22/Port 12080/g' /etc/ssh/sshd_config
     sed -i 's/^#UseDNS yes/UseDNS no/g' /etc/ssh/sshd_config
     sed -i 's/^GSSAPIAuthentication yes/GSSAPIAuthentication no/g' /etc/ssh/sshd_config
     sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/g'  /etc/ssh/sshd_config # 启用公钥登录
-    sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config # 关闭密码验证登录，记得先添加了key，再执行
+    #sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config # 关闭密码验证登录，记得先添加了key，再执行
     systemctl restart sshd
 }
 
